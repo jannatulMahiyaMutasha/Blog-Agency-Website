@@ -1,0 +1,44 @@
+.carousel-item img {
+    height: 70vh; /* Adjust the height of the carousel images */
+    object-fit: cover; /* Ensures images maintain aspect ratio and fill the space */
+    border-radius: 10px; /* Adds rounded corners */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for captions */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.carousel-caption h3 {
+    font-size: 2rem; /* Adjusts title size */
+    font-weight: bold;
+    color: #fff; /* White text color */
+}
+
+.carousel-caption p {
+    font-size: 1.2rem; /* Adjusts description text size */
+    color: #f0f0f0; /* Light gray text color */
+}
+
+.carousel-indicators li {
+    background-color: #ffffff; /* White dots for indicators */
+    opacity: 0.8;
+}
+
+.carousel-indicators li.active {
+    background-color: #007bff; /* Blue color for active indicator */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for controls */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #007bff; /* Blue color on hover */
+    transition: background-color 0.3s ease-in-out;
+}

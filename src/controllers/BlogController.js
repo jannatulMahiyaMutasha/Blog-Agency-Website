@@ -51,4 +51,3 @@ exports.removeBlog = async (req, res) => {
     res.status(200).json({message: "Blog deleted successfully"});
 
 }
-

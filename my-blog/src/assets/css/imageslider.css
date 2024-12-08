@@ -1,0 +1,18 @@
+.carousel-item img {
+    width: 100%; /* Ensures the image stretches across the width of the slider */
+    height: 70vh; /* Sets a fixed height (adjust as needed, e.g., 60vh or 80vh) */
+    object-fit: cover; /* Makes sure the image covers the entire area without distortion */
+    border-radius: 8px; /* Adds rounded corners to the images (optional) */
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 50vh; /* Adjusts the height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        height: 40vh; /* Adjusts the height for very small screens */
+    }
+}

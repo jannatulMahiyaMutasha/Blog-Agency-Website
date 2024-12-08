@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const teamSchema = mongoose.Schema({
     name: {type: String, required: true},
     role: {type: String, required: true},
-    photoUrl: {type: String}, // URL for team member's photo
+    image: {type: String}, // URL for team member's photo
     description: {type: String},
 },
      {timestamps:true,versionKey:false}
