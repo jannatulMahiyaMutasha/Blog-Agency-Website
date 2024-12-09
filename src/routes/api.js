@@ -22,13 +22,13 @@ router.put("/updateBlog/:id", BlogController.updateBlog);
 router.delete("/removeBlog/:id", BlogController.removeBlog);
 
 //Team
-router.get("/readTeam/:id", TeamController.readTeam);
+router.get("/readTeam", TeamController.readTeam);
 router.post("/createTeam", TeamController.createTeam);
 router.put("/updateTeam/:id", TeamController.updateTeam);
 router.delete("/removeTeam/:id", TeamController.removeTeam);
 
 //Service
-router.get("/readService/:id", ServiceController.readService);
+router.get("/readService", ServiceController.readService);
 router.post("/createService", ServiceController.createService);
 router.put("/updateService/:id", ServiceController.updateService);
 router.delete("/removeService/:id", ServiceController.removeService);
