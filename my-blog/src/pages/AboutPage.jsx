@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AppNavBar from "../components/layout/AppNavBar.jsx";
+import AppNavBar from "../components/layout/appNavBar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import { Toaster } from "react-hot-toast";
 import axios from 'axios';

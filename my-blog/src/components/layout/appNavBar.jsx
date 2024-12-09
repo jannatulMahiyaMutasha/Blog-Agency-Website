@@ -1,86 +1,78 @@
-import React, { useEffect, useState } from "react";
-import "../layout/HeroSection.jsx"
-import Footer from "../layout/footer.jsx";
-import { Toaster } from "react-hot-toast";
-import axios from "axios";
-import "../../assets/css/nav.css"; // Link to CSS for styling
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/images/blogagencylogo.webp";
 
-const AppNavBar = () => {
-    const [blogs, setBlogs] = useState([]);
-
-    useEffect(() => {
-        // Fetch blog data dynamically from the backend API
-        axios
-            .get("/api/v1/readBlog/:id")
-            .then((response) => {
-                setBlogs(response.data.slice(0, 6)); // Show only 6 items
-            })
-            .catch((error) => {
-                console.error("Error fetching blogs:", error);
-            });
-    }, []);
+const AppNavBar = ({ isLogin = () => false, onLogout }) => {
+    const [SearchKeyword, SetSearchKeyword] = useState("");
 
     return (
-        <div>
-            <AppNavBar />
+        <nav className="navbar sticky-top shadow-sm bg-white navbar-expand-lg navbar-light m-0 py-3">
+            <div className="container">
+                {/* Brand Logo */}
+                <Link className="navbar-brand" to="/">
+                    <img
+                        className="img-fluid"
+                        src={logo}
+                        alt="Blog Agency Logo"
+                        style={{ width: "80px", height: "auto" }}
+                    />
+                </Link>
 
-            {/* Hero Section */}
-            <section id="hero" className="hero-section">
-                <div className="container text-center">
-                    <h1>Welcome to Our Blog Agency</h1>
-                    <p>Delivering creative solutions and insights for your business.</p>
-                    <button className="btn btn-primary">Get Started</button>
+                {/* Navbar Toggle Button for Mobile */}
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#nav06"
+                    aria-controls="nav06"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                {/* Navbar Links */}
+                <div className="collapse navbar-collapse" id="nav06">
+                    <ul className="navbar-nav mt-3 mt-lg-0 mb-3 mb-lg-0 ms-lg-3">
+                        <li className="nav-item me-4">
+                            <Link className="btn ms-2 btn-light" to="/">
+                                <i className="bi bi-house"></i> Home
+                            </Link>
+                            <Link className="btn ms-2 btn-light" to="/about">
+                                About
+                            </Link>
+                            <Link className="btn ms-2 btn-light" to="/blog">
+                                Blog
+                            </Link>
+                            <Link className="btn ms-2 btn-light" to="/service">
+                                Services
+                            </Link>
+                            <Link className="btn ms-2 btn-light" to="/contact">
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
-            </section>
 
-            {/* Blog Section */}
-            <section id="blogs" className="section-padding">
-                <div className="container">
-                    <h2 className="text-center">Our Latest Blogs</h2>
-                    <div className="row">
-                        {blogs.map((blog, index) => (
-                            <div key={index} className="col-md-4">
-                                <div className="blog-card">
-                                    <img
-                                        src={blog.image || "/assets/images/default-blog.jpg"}
-                                        alt={blog.title}
-                                        className="img-fluid"
-                                    />
-                                    <h4>{blog.title}</h4>
-                                    <p>{blog.description.slice(0, 6)}...</p>
-                                    <button className="btn btn-link">Read More</button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                {/* Login/Logout and Profile Buttons */}
+                <div className="d-flex">
+                    {isLogin() ? (
+                        <>
+                            <button onClick={onLogout} className="btn ms-3 btn-secondary">
+                                Logout
+                            </button>
+                            <Link className="btn ms-3 btn-secondary" to="/profile">
+                                Profile
+                            </Link>
+                        </>
+                    ) : (
+                        <Link className="btn ms-3 btn-secondary" to="/login">
+                            Login
+                        </Link>
+                    )}
                 </div>
-            </section>
-
-            {/* Custom Section */}
-            <section id="custom" className="custom-section bg-light section-padding">
-                <div className="container">
-                    <h2 className="text-center">Why Choose Us?</h2>
-                    <div className="row">
-                        <div className="col-md-6">
-                            <h3>Creative Content</h3>
-                            <p>
-                                Our content is crafted to provide engaging and valuable
-                                insights.
-                            </p>
-                        </div>
-                        <div className="col-md-6">
-                            <h3>Expert Team</h3>
-                            <p>
-                                We are a team of professionals dedicated to achieving results.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <Toaster position="bottom-center" />
-            <Footer />
-        </div>
+            </div>
+        </nav>
     );
 };
 

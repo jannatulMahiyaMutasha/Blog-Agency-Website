@@ -10,9 +10,9 @@ const BlogPage = () => {
     return (
         <div className='grid sm:grid-cols- md:grid-cols-2 lg:grid-3'>
 
-<AppNavBar></AppNavBar>
+            <AppNavBar></AppNavBar>
             <BlogSection></BlogSection>
-<Footer></Footer>
+            <Footer></Footer>
 
         </div>
     );
