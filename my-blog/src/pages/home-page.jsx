@@ -11,7 +11,7 @@ const HomePage = () => {
      <>
          <AppNavBar></AppNavBar>
          <HeroSection></HeroSection>
-            <BlogSection limit={6}></BlogSection>
+            <BlogSection></BlogSection>
          <ChoicePage></ChoicePage>
              <Footer></Footer>
      </>
