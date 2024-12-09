@@ -10,7 +10,7 @@ const AboutPage = () => {
 
     useEffect(() => {
         // Fetch team data from the backend API
-        axios.get('/api/v1/readTeam/:id')
+        axios.get('/api/v1/readTeam')
             .then((response) => {
                 const updatedMembers = response.data.map(member => ({
                     ...member,

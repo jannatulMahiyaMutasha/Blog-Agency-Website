@@ -58,9 +58,9 @@ const AppNavBar = ({ isLogin = () => false, onLogout }) => {
                 <div className="d-flex">
                     {isLogin() ? (
                         <>
-                            <Link className="btn ms-3 btn-secondary" to="/logout">
+                            <button onClick={onLogout} className="btn ms-3 btn-secondary">
                                 Logout
-                            </Link>
+                            </button>
                             <Link className="btn ms-3 btn-secondary" to="/profile">
                                 Profile
                             </Link>

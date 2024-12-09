@@ -13,7 +13,7 @@ const ServicePage = () => {
         // Fetch services from the backend
         const fetchServices = async () => {
             try {
-                const response = await axios.get("/api/v1/readService/:id");
+                const response = await axios.get("/api/v1/readService");
                 setServices(response.data);
             } catch (err) {
                 setError("Failed to fetch services. Please try again later.");
