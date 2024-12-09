@@ -5,10 +5,14 @@ const Blog =require("../models/BlogModel.js")
 const router = express.Router();
 
 // CRUD Operations
+
 exports.readBlog = async (req, res) => {
     const blogs = await Blog.find();
     res.json(blogs);
 }
+
+
+
 
 exports.createBlog = async (req, res) => {
     const newBlog = Blog(req.body);

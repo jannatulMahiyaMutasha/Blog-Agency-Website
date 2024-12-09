@@ -7,7 +7,7 @@ import ServicePage from "./pages/ServicePage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import BlogSection from "./components/Blog/BlogSection.jsx";
-import Login from "./components/Login";
+import Login from "./components/login.jsx";
 
 
 const App = () => {
