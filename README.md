@@ -45,3 +45,16 @@ Admin dashboard for CRUD operations & analytics
 JWT authentication with secure role‑based routes
 
 100 % responsive layout (mobile → desktop)
+
+📦 Dependencies (excerpt)
+"express": "^4.19.2",
+"mongoose": "^8.3.1",
+"cors": "^2.9.0",
+"dotenv": "^16.5.4",
+"jsonwebtoken": "^9.5.3",
+"react": "^18.3.0",
+"react-router-dom": "^6.23.1",
+
+Live Site: https://blog-agency-website-nine.vercel.app
+
+
